@@ -121,7 +121,7 @@ Dependencies
 - Provide OpenStack base layer with support for HA deployments
 - Provide OpenStack base layer with support for SSL communication
 - Provide OpenStack base layer with support for workload status
--	Provide Ceilometer interface layer
+- Provide Ceilometer interface layer
 
 Not supported
 ===============
