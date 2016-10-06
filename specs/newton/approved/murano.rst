@@ -22,7 +22,7 @@ on Openstack.
 Problem Description
 ===================
 
-To provide UI and API which allows to compose and deploy composite
+To provide UI (Horizon) and API which allows to compose and deploy composite
 environments on the Application abstraction level and then manage their
 lifecycle. The Service should be able to orchestrate complex circular dependent
 cases in order to setup complete environments with many dependent applications
@@ -40,11 +40,6 @@ The new Murano charm should include, as a minimum, the following features:
 - Deployable in a highly available configuration
 - Allow clients and services to interact using SSL encryption
 - Charm progress displayed via workload status
-
-Alternatives
-------------
-
-Jobs could scheduled manually via cron on each machine.
 
 Implementation
 ==============
@@ -73,8 +68,7 @@ Provide Murano charm
 - Create skeleton charm layer based on OpenStack base layer and available
   interface layers to deploy Murano.
 - Add support for upgrading Murano
-- Add config option and accompanying support for upgrades via
-  action-managed-upgrade.
+- Running action-managed-upgrade on Murano charm should not be supported.
 - Add support for deploying Murano in a highly available configuration
 - Add support for the Murano to display workload status
 - Add support SSL endpoints
@@ -117,7 +111,6 @@ Dependencies
 
 - Provide rabbitmq interface layer
 - Provide mysql-shared interface layer
-- Provide pgsql interface layer
 - Provide keystone interface layer
 - Provide horizon interface layer
 - Provide heat interface layer
@@ -128,3 +121,9 @@ Dependencies
 - Provide OpenStack base layer with support for HA deployments
 - Provide OpenStack base layer with support for SSL communication
 - Provide OpenStack base layer with support for workload status
+-	Provide Ceilometer interface layer
+
+Not supported
+===============
+- Support of Cloud Foundary Service Broker API (murano-cfapi)
+- Support of Glare Artifact Repository (g-glare)
